@@ -1,0 +1,70 @@
+<section>
+  <article>
+    <h3>Interpoletaion</h3>
+    <p>String redenrizada: {{ url }}</p>
+    <p>String redenrizada: {{ 1 + 2 + getValue() }}</p>
+  </article>
+</section>
+<hr>
+<div class="">
+  Selecione uma classe:
+
+  <select #class (change)="0">
+    <option value="alert-success">Sucesso</option>
+    <option value="alert-info">Info</option>
+    <option value="alert-warning">Warning</option>
+    <option value="alert-danger">Danger</option>
+  </select>
+
+
+  <div class="alert" role="alert" [class.alert-success]="class.value == 'alert-success'">
+    Success
+  </div>
+  <div class="alert" role="alert" [class.alert-info]="class.value == 'alert-info'">Info</div>
+  <div class="alert" role="alert" [class.alert-warning]="class.value == 'alert-warning'">Warning</div>
+  <div class="alert" role="alert" [class.alert-danger]="class.value == 'alert-danger'">Danger</div>
+
+</div>
+<hr>
+<div>
+  <h3>Event Binding</h3>
+  
+  <div>
+    <button (click)="botaoClicado(class)" class="btn btn-primary">Me clique</button>
+    <br><br>
+    <input type="text" (keyup)="onkeyUp($event)" 
+      (keyup.enter)="salvandoValor(campoInput.value)"
+      #campoInput>
+    <p>Valor Atual: {{ valorAtual }}</p>
+    <p>Valor Salvo: {{ valorSalvo }}</p>
+  </div>
+</div>
+<hr>
+<div>
+  <h3>Two-way-Binding</h3>
+  
+  <div>
+    <input type="text"
+      [value]="nome"
+      (input)="nome = $event.target.value"
+    />
+
+    <input type="text"
+      [ngModel]="nome"
+      (ngModelChange)="nome = $event"
+    />
+
+    <input type="text" [(ngModel)]="nome"
+    />
+
+    <p>Você digitou: {{ nome }}</p>
+    <div>
+    </div>
+      <input type="text" [(ngModel)]="pessoa.nome"/>
+      <input type="text" [(ngModel)]="pessoa.idade"/>
+      <p>Meu bone é {{ pessoa.nome }} e tenho {{pessoa.idade}} anos</p>
+  </div>
+</div>
+
+<app-input-properties [nomeCurso]="nomeDoCurso"></app-input-properties>
+<app-output-property [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></app-output-property>
