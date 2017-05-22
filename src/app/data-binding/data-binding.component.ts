@@ -22,14 +22,12 @@ export class DataBindingComponent implements OnInit {
     console.log(evento);
   }
 
-
   getValue(){
     return 3;
   }
 
   botaoClicado(e:HTMLSelectElement){
     alert('botão clicado');
-    
     console.log(e.value);
   }
 

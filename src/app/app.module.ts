@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { InputPropertiesComponent } from './input-properties/input-properties.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
+import { CicloComponent } from './ciclo/ciclo.component';
+import { DiretivaNgifComponent } from './diretiva-ngif/diretiva-ngif.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataBindingComponent,
     InputPropertiesComponent,
-    OutputPropertyComponent
+    OutputPropertyComponent,
+    CicloComponent,
+    DiretivaNgifComponent
   ],
   imports: [
     BrowserModule,
